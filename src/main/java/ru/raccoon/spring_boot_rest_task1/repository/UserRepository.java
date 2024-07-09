@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public class UserRepository {
 
-    public List<Authorities> getUserAuthorities(String user, String password) {
+    public final List<Authorities> getUserAuthorities(String user, String password) {
 
         for (User person : SpringBootRestTask1Application.personList) {
             if ((person.getUser().equals(user)) && (person.getPassword().equals(password))) {
