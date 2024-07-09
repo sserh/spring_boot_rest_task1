@@ -1,12 +1,14 @@
 package ru.raccoon.spring_boot_rest_task1.service;
 
+import ru.raccoon.spring_boot_rest_task1.exception.InvalidCredentials;
+import ru.raccoon.spring_boot_rest_task1.exception.UnauthorizedUser;
 import ru.raccoon.spring_boot_rest_task1.repository.Authorities;
 import ru.raccoon.spring_boot_rest_task1.repository.UserRepository;
 
 import java.util.List;
 
 public class AuthorizationService {
-    UserRepository userRepository;
+    UserRepository userRepository = new UserRepository();
 
     public List<Authorities> getAuthorities(String user, String password) {
         if (isEmpty(user) || isEmpty(password)) {
